@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="CustomCell" id="k8K-yC-5hC" customClass="CustomCell" customModule="TableViewTest3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="fvh-mM-j3V">
+                    <rect key="frame" x="2" y="2" width="340" height="92"/>
+                    <subviews>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8V-lM-W5f">
+                            <rect key="frame" x="20" y="10" width="88" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="88" id="9lg-fA-5Y4"/>
+                                <constraint firstAttribute="height" constant="70" id="FbD-kA-o7X"/>
+                            </constraints>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IpT-MO-nXD"/>
+                        </imageView>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGJ-9C-Qca">
+                            <rect key="frame" x="126" y="62" width="208" height="18"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="m6C-vY-rBX">
+                                <font key="font" size="14" name=".AppleSystemUIFont"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaR-Sd-XoO">
+                            <rect key="frame" x="126" y="8" width="208" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="VNJ-4R-Ctq"/>
+                            </constraints>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Label" id="Tab-Zs-Jo5">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" white="0.18706597222222221" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="kaR-Sd-XoO" secondAttribute="bottom" priority="750" constant="8" id="6x5-Ie-zX8"/>
+                        <constraint firstItem="oGJ-9C-Qca" firstAttribute="top" secondItem="d8V-lM-W5f" secondAttribute="top" id="Dvt-fC-PqF"/>
+                        <constraint firstAttribute="trailing" secondItem="oGJ-9C-Qca" secondAttribute="trailing" constant="8" id="T65-Vk-Vmu"/>
+                        <constraint firstItem="kaR-Sd-XoO" firstAttribute="leading" secondItem="oGJ-9C-Qca" secondAttribute="leading" id="VdQ-Gj-GKG"/>
+                        <constraint firstAttribute="trailing" secondItem="kaR-Sd-XoO" secondAttribute="trailing" constant="8" id="Xl1-bD-VoC"/>
+                        <constraint firstItem="oGJ-9C-Qca" firstAttribute="leading" secondItem="d8V-lM-W5f" secondAttribute="trailing" constant="20" id="eH0-FW-Kop"/>
+                        <constraint firstItem="d8V-lM-W5f" firstAttribute="top" secondItem="fvh-mM-j3V" secondAttribute="top" constant="12" id="pA3-67-cBZ"/>
+                        <constraint firstItem="d8V-lM-W5f" firstAttribute="leading" secondItem="fvh-mM-j3V" secondAttribute="leading" constant="20" id="pLc-kd-jwg"/>
+                        <constraint firstItem="kaR-Sd-XoO" firstAttribute="top" secondItem="oGJ-9C-Qca" secondAttribute="bottom" constant="4" id="vB2-mF-xmt"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fvh-mM-j3V" firstAttribute="leading" secondItem="k8K-yC-5hC" secondAttribute="leading" constant="2" id="57Q-wY-uQt"/>
+                <constraint firstAttribute="bottom" secondItem="fvh-mM-j3V" secondAttribute="bottom" constant="2" id="6oQ-sp-Ogv"/>
+                <constraint firstItem="fvh-mM-j3V" firstAttribute="top" secondItem="k8K-yC-5hC" secondAttribute="top" constant="2" id="ICM-0h-dBX"/>
+                <constraint firstAttribute="trailing" secondItem="fvh-mM-j3V" secondAttribute="trailing" constant="2" id="lh5-Au-e95"/>
+            </constraints>
+            <connections>
+                <outlet property="aImageView" destination="d8V-lM-W5f" id="epa-bc-VS8"/>
+                <outlet property="contentView" destination="fvh-mM-j3V" id="9fM-9T-cmg"/>
+                <outlet property="detailLabel" destination="kaR-Sd-XoO" id="qWk-Qn-JEc"/>
+                <outlet property="titleLabel" destination="oGJ-9C-Qca" id="wXg-GB-I2Y"/>
+            </connections>
+            <point key="canvasLocation" x="191" y="168"/>
+        </tableCellView>
+    </objects>
+</document>
