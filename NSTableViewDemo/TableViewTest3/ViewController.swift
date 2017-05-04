@@ -59,6 +59,9 @@ extension ViewController: NSTableViewDataSource{
         let cell = tableView.make(withIdentifier: "CustomCell", owner: self) as! CustomCell
         let item = dataSource?[row]
         cell.setContent(item: item)
+        print("view for \(row)")
+//        cell.needsLayout = true
+//        cell.layoutSubtreeIfNeeded()
         return cell
     }
     
@@ -66,8 +69,19 @@ extension ViewController: NSTableViewDataSource{
         let cell = tableView.make(withIdentifier: "CustomCell", owner: self) as! CustomCell
         let item = dataSource?[row]
         cell.setContent(item: item)
-        return cell.contentView.fittingSize.height
+        cell.needsLayout = true
+        cell.layoutSubtreeIfNeeded()
+//        return cell.contentView.fittingSize.height
+        return cell.fittingSize.height
+        
+        
     }
+    
+    func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
+        print("will display \(row)")
+    }
+    
+    
     
 }
 
@@ -88,5 +102,6 @@ extension ViewController: NSTableViewDelegate{
             tableView.deselectRow(row)
         }
     }
+    
 }
 

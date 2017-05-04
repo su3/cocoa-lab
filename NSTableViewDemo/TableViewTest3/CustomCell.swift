@@ -10,7 +10,7 @@ import Cocoa
 
 class CustomCell: NSTableCellView {
 
-    @IBOutlet weak var contentView: NSView!
+    
 
     @IBOutlet weak var aImageView: NSImageView!
     
@@ -27,6 +27,11 @@ class CustomCell: NSTableCellView {
 //        }
 //    }
     
+    override func awakeFromNib() {
+        self.canDrawSubviewsIntoLayer = true
+        self.wantsLayer = true
+    }
+    
     func setContent(item: DataModel?){
         
         guard let item = item else {
@@ -36,7 +41,15 @@ class CustomCell: NSTableCellView {
         self.titleLabel.stringValue = item.title
         self.detailLabel.stringValue = item.detail
         self.aImageView.image = NSImage(named: item.imageName)
+        Swift.print("set")
+        
+        self.detailLabel.setNeedsDisplay()
+        self.detailLabel.displayIfNeeded()
     }
+    
+//    override func viewWillDraw() {
+//        Swift.print("draw")
+//    }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
