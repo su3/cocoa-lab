@@ -10,11 +10,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <tableCellView identifier="CustomCell" id="k8K-yC-5hC" customClass="CustomCell" customModule="NSTableViewDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="344" height="69"/>
+            <rect key="frame" x="0.0" y="0.0" width="344" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8V-lM-W5f">
-                    <rect key="frame" x="9" y="-14" width="70" height="70"/>
+                    <rect key="frame" x="9" y="3" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="BXS-tC-fQH"/>
                         <constraint firstAttribute="width" constant="70" id="mOP-9w-e17"/>
@@ -22,7 +22,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IpT-MO-nXD"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGJ-9C-Qca">
-                    <rect key="frame" x="95" y="38" width="238" height="18"/>
+                    <rect key="frame" x="95" y="55" width="238" height="18"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="m6C-vY-rBX">
                         <font key="font" size="14" name=".AppleSystemUIFont"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +30,10 @@
                     </textFieldCell>
                 </textField>
                 <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaR-Sd-XoO">
-                    <rect key="frame" x="95" y="13" width="238" height="17"/>
+                    <rect key="frame" x="95" y="13" width="238" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="Pis-eY-tgu"/>
+                    </constraints>
                     <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" title="Label" id="Tab-Zs-Jo5">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" white="0.18706597222222221" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
@@ -45,7 +48,7 @@
                 <constraint firstItem="oGJ-9C-Qca" firstAttribute="leading" secondItem="d8V-lM-W5f" secondAttribute="trailing" constant="18" id="bun-l3-Tea"/>
                 <constraint firstItem="kaR-Sd-XoO" firstAttribute="leading" secondItem="d8V-lM-W5f" secondAttribute="trailing" constant="18" id="k3l-YR-92R"/>
                 <constraint firstAttribute="trailing" secondItem="oGJ-9C-Qca" secondAttribute="trailing" constant="13" id="nIl-4W-llz"/>
-                <constraint firstAttribute="bottom" secondItem="kaR-Sd-XoO" secondAttribute="bottom" constant="13" id="odb-3C-Kdc"/>
+                <constraint firstAttribute="bottom" secondItem="kaR-Sd-XoO" secondAttribute="bottom" priority="750" constant="13" id="odb-3C-Kdc"/>
                 <constraint firstItem="kaR-Sd-XoO" firstAttribute="top" secondItem="oGJ-9C-Qca" secondAttribute="bottom" constant="8" id="pjf-mN-LeE"/>
                 <constraint firstAttribute="trailing" secondItem="kaR-Sd-XoO" secondAttribute="trailing" constant="13" id="s2n-Sz-thI"/>
             </constraints>

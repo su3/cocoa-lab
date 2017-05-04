@@ -10,22 +10,9 @@ import Cocoa
 
 class CustomCell: NSTableCellView {
 
-    
-
     @IBOutlet weak var aImageView: NSImageView!
-    
-    
     @IBOutlet weak var titleLabel: NSTextField!
-    
     @IBOutlet weak var detailLabel: NSTextField!
-    
-//    @IBOutlet weak var tLabel: NSTextField!
-//    
-//    @IBOutlet weak var dLabel: NSTextField!{
-//        didSet{
-//            self.dLabel.maximumNumberOfLines = 10
-//        }
-//    }
     
     override func awakeFromNib() {
         self.canDrawSubviewsIntoLayer = true
@@ -41,15 +28,10 @@ class CustomCell: NSTableCellView {
         self.titleLabel.stringValue = item.title
         self.detailLabel.stringValue = item.detail
         self.aImageView.image = NSImage(named: item.imageName)
-        Swift.print("set")
         
         self.detailLabel.setNeedsDisplay()
         self.detailLabel.displayIfNeeded()
     }
-    
-//    override func viewWillDraw() {
-//        Swift.print("draw")
-//    }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

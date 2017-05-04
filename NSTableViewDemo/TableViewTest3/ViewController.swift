@@ -12,7 +12,6 @@ class ViewController: NSViewController {
     
     var dataSource: [DataModel]?
     
-    
     @IBOutlet weak var tableView: NSTableView!{
         didSet{
             let nib = NSNib(nibNamed: "CustomCell", bundle: nil)
@@ -59,30 +58,24 @@ extension ViewController: NSTableViewDataSource{
         let cell = tableView.make(withIdentifier: "CustomCell", owner: self) as! CustomCell
         let item = dataSource?[row]
         cell.setContent(item: item)
-        print("view for \(row)")
-//        cell.needsLayout = true
-//        cell.layoutSubtreeIfNeeded()
         return cell
     }
+    
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         let cell = tableView.make(withIdentifier: "CustomCell", owner: self) as! CustomCell
         let item = dataSource?[row]
         cell.setContent(item: item)
-        cell.needsLayout = true
-        cell.layoutSubtreeIfNeeded()
-//        return cell.contentView.fittingSize.height
+        
+        let tc = tableView.tableColumns[0]
+        
+        let gap: CGFloat = 70 + 9 + 18 + 13 //label 以外的宽度
+        cell.titleLabel.preferredMaxLayoutWidth = tc.width - gap
+        cell.detailLabel.preferredMaxLayoutWidth = tc.width - gap
+    
         return cell.fittingSize.height
-        
-        
     }
-    
-    func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
-        print("will display \(row)")
-    }
-    
-    
-    
+ 
 }
 
 //MARK: - NSTableViewDelegate
