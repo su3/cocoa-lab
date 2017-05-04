@@ -69,7 +69,7 @@ extension ViewController: NSTableViewDataSource{
         
         let tc = tableView.tableColumns[0]
         
-        let gap: CGFloat = 70 + 9 + 18 + 13 //label 以外的宽度
+        let gap: CGFloat = 70 + 9 + 18 + 13 //width outside of label
         cell.titleLabel.preferredMaxLayoutWidth = tc.width - gap
         cell.detailLabel.preferredMaxLayoutWidth = tc.width - gap
     
